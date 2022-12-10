@@ -1,7 +1,7 @@
 
-export function KeyboardButtom({keyboardLetter}) {
+export function KeyboardButton({keyboardLetter}) {
 
     return (
-        <button key={Date().now} id={keyboardLetter} className="kbd-btn">{keyboardLetter}</button>
+        <button id={keyboardLetter} className="kbd-btn">{keyboardLetter}</button>
     )
 }

@@ -1,9 +1,9 @@
-import { KeyboardButtom } from "./KeyboardButton";
-export function KeyboardRow({letters}) {
+import { KeyboardButton } from "./KeyboardButton";
+export function KeyboardRow({letters, rowId}) {
     return (
-        <div className="kboard-row1">
+        <div className="kboard-row">
             {letters.map( letter => (
-                <KeyboardButtom keyboardLetter={letter}/>
+                <KeyboardButton key={letter} keyboardLetter={letter}/>
             ))}
             
         </div>

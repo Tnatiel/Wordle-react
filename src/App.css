@@ -78,10 +78,14 @@ main {
 .keyboard #enter, .keyboard #del {
   width: 4rem;
 }
-.keyboard .kboard-row1, .keyboard .kboard-row2, .keyboard .kboard-row3 {
+.keyboard .kboard-row {
   display: flex;
   justify-content: center;
   column-gap: 0.2rem;
+}
+
+.foucsed {
+  border: groove rgb(187 132 231);
 }
 
 
