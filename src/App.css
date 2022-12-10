@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#main-header {
+  font-family: "Stardos Stencil", cursive;
+  font-size: 3vh;
+  font-weight: 500;
+  color: #e0e1dd;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0d1b2a;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  gap: 5vh;
+  margin-top: 2vh;
+}
+
+.user-input-sec {
+  display: grid;
+  gap: 0.1vh;
+}
+.user-input-sec .ur-input {
+  width: 3rem;
+  height: 8vh;
+  border: solid #2e3e5b;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 3rem;
+  color: #e0e1dd;
+}
+.user-input-sec .r1, .user-input-sec .r2, .user-input-sec .r3, .user-input-sec .r4, .user-input-sec .r5, .user-input-sec .r6 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 0.1vw;
 }
 
-.App-link {
-  color: #61dafb;
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+  gap: 0.5vh;
+}
+.keyboard .kbd-btn {
+  background-color: #1b263b;
+  border-radius: 15%;
+  border: 0.1rem solid #dcdcdc;
+  display: inline-block;
+  cursor: pointer;
+  color: #e0e1dd;
+  font-family: "Josefin Slab", serif;
+  font-size: 2vw;
+  font-weight: bold;
+  height: 3.2rem;
+  width: 2.5rem;
+  text-decoration: none;
+}
+.keyboard .kbd-btn:hover {
+  background: linear-gradient(to bottom, #2e3e5b 5%, #2e3e5b 100%);
+  background-color: #2e3e5b;
+}
+.keyboard .kbd-btn:active {
+  position: relative;
+  top: 0.05rem;
+}
+.keyboard #enter, .keyboard #del {
+  width: 4rem;
+}
+.keyboard .kboard-row1, .keyboard .kboard-row2, .keyboard .kboard-row3 {
+  display: flex;
+  justify-content: center;
+  column-gap: 0.2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
