@@ -10,7 +10,7 @@ function App() {
   const mainTitle = 'Wordle'
   // Input rows
   const rowOneIds = ['0-0', '0-1', '0-2', '0-3', '0-4']
-  const rowOneInputs = rowOneIds.map( id => ({inputId: id, focus: false}))
+  const rowOneInputs = rowOneIds.map( id => id === '0-0' ? ({inputId: id, focus: true}): ({inputId: id, focus: false}))
   const rowTwoIds = ['1-0', '1-1', '1-2', '1-3', '1-4']
   const rowTwoInputs = rowTwoIds.map( id => ({inputId: id, focus: false}))
   const rowThreeIds = ['2-0', '2-1', '2-2', '2-3', '2-4']
@@ -26,7 +26,6 @@ function App() {
   const rowOneLetters = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'] 
   const rowTwoLetters = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'] 
   const rowThreeLetters = ['enter', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'del'] 
-
 
   return (
         <main>

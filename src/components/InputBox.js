@@ -1,7 +1,7 @@
 
 
-export function InputBox({boxId}) {
+export function InputBox({boxId, focus}) {
     return (
-        <div id={boxId} className="ur-input"></div>
+        <div id={boxId} className={`ur-input ${focus === true ? 'focused' : ''}`}></div>
     )
 }
