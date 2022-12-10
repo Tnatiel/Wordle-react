@@ -1,62 +1,56 @@
 
 import './App.css';
 import { Header } from './components/Header';
+import { InputRow } from './components/InputsRow';
+
 
 function App() {
+
+  const mainTitle = 'Wordle'
+
+  const rowOneIds = ['0-0', '0-1', '0-2', '0-3', '0-4']
+  const rowTwoIds = ['1-0', '1-1', '1-2', '1-3', '1-4']
+  const rowThreeIds = ['2-0', '2-1', '2-2', '2-3', '2-4']
+  const rowFourIds = ['3-0', '3-1', '3-2', '3-3', '3-4']
+  const rowFiveIds = ['4-0', '4-1', '4-2', '4-3', '4-4']
+  const rowSixIds = ['5-0', '5-1', '5-2', '5-3', '5-4']
+
   return (
         <main>
         {/* <!-- PAGE HEADER --> */}
-        <Header />
+        <Header appTitle={mainTitle} />
         {/* <!-- USER INPUTS --> */}
         <div className="user-input-sec">
             {/* <!-- ROW 1 --> */}
-            <div className="r1">
-                <div id="0-0" className="ur-input"></div>
-                <div id="0-1" className="ur-input"></div>
-                <div id="0-2" className="ur-input"></div>
-                <div id="0-3" className="ur-input"></div>
-                <div id="0-4" className="ur-input"></div>              
-            </div>
+            <InputRow 
+              ids={rowOneIds}
+              rowClass={'r1'}
+            />
             {/* <!-- ROW 2 --> */}
-            <div className="r2">
-                <div id="1-0" className="ur-input"></div>
-                <div id="1-1" className="ur-input"></div>
-                <div id="1-2" className="ur-input"></div>
-                <div id="1-3" className="ur-input"></div>
-                <div id="1-4" className="ur-input"></div>
-            </div>
+            <InputRow 
+              ids={rowTwoIds}
+              rowClass={'r2'}
+              />
             {/* <!-- ROW 3 --> */}
-            <div className="r3">
-                <div id="2-0" className="ur-input"></div>
-                <div id="2-1" className="ur-input"></div>
-                <div id="2-2" className="ur-input"></div>
-                <div id="2-3" className="ur-input"></div>
-                <div id="2-4" className="ur-input"></div>
-            </div>
+            <InputRow 
+              ids={rowThreeIds}
+              rowClass={'r3'}
+              />
             {/* <!-- ROW 4 --> */}
-            <div className="r4">
-                <div id="3-0" className="ur-input"></div>
-                <div id="3-1" className="ur-input"></div>
-                <div id="3-2" className="ur-input"></div>
-                <div id="3-3" className="ur-input"></div>
-                <div id="3-4" className="ur-input"></div>
-            </div>
+            <InputRow 
+              ids={rowFourIds}
+              rowClass={'r4'}
+              />
             {/* <!-- ROW 5 --> */}
-            <div className="r5">
-                <div id="4-0" className="ur-input"></div>
-                <div id="4-1" className="ur-input"></div>
-                <div id="4-2" className="ur-input"></div>
-                <div id="4-3" className="ur-input"></div>
-                <div id="4-4" className="ur-input"></div>
-            </div>
+            <InputRow 
+              ids={rowFiveIds}
+              rowClass={'r5'}
+              />
             {/* <!-- ROW 6 --> */}
-            <div className="r6">
-                <div id="5-0" className="ur-input"></div>
-                <div id="5-1" className="ur-input"></div>
-                <div id="5-2" className="ur-input"></div>
-                <div id="5-3" className="ur-input"></div>
-                <div id="5-4" className="ur-input"></div>
-            </div>
+            <InputRow 
+              ids={rowSixIds}
+              rowClass={'r6'}
+              />
         </div>
         {/* <!-- KEYBOARD --> */}
         <div className="keyboard">
