@@ -12,9 +12,10 @@ export function InputRow({inputsData, rowClass}) {
                 <InputBox 
                     boxId={inputData.inputId}
                     key={inputData.inputId}
+                    focus={inputData.focus}
                  />
-            ))}            
-           {/* TODO conditional className */}
+            ))}
+            {/* {console.log(inputsData)} */}
            {/* TODO add input onkeyup that enter the key */}
         </div>
     )

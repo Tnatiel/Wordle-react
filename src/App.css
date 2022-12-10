@@ -31,7 +31,7 @@ main {
   display: grid;
   gap: 0.1vh;
 }
-.user-input-sec .ur-input {
+ .ur-input {
   width: 3rem;
   height: 8vh;
   border: solid #2e3e5b;
