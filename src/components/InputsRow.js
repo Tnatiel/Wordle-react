@@ -13,6 +13,7 @@ export function InputRow({inputsData, rowClass}) {
                     boxId={inputData.inputId}
                     key={inputData.inputId}
                     focus={inputData.focus}
+                    letter={inputData.letter}
                  />
             ))}
             {/* {console.log(inputsData)} */}

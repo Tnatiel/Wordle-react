@@ -1,4 +1,5 @@
 
+import { useEffect, useState } from 'react';
 import './App.css';
 import { Header } from './components/Header';
 import { InputRow } from './components/InputsRow';
@@ -7,25 +8,46 @@ import { KeyboardRow } from './components/KeyboardRow';
 
 function App() {
 
+  
+  // useEffect(() => {
+    
+  // }, [currentInputIndex])
+  
   const mainTitle = 'Wordle'
   // Input rows
-  const rowOneIds = ['0-0', '0-1', '0-2', '0-3', '0-4']
-  const rowOneInputs = rowOneIds.map( id => id === '0-0' ? ({inputId: id, focus: true}): ({inputId: id, focus: false}))
-  const rowTwoIds = ['1-0', '1-1', '1-2', '1-3', '1-4']
-  const rowTwoInputs = rowTwoIds.map( id => ({inputId: id, focus: false}))
-  const rowThreeIds = ['2-0', '2-1', '2-2', '2-3', '2-4']
-  const rowThreeInputs = rowThreeIds.map( id => ({inputId: id, focus: false}))
-  const rowFourIds = ['3-0', '3-1', '3-2', '3-3', '3-4']
-  const rowFourInputs = rowFourIds.map( id => ({inputId: id, focus: false}))
-  const rowFiveIds = ['4-0', '4-1', '4-2', '4-3', '4-4']
-  const rowFiveInputs = rowFiveIds.map( id => ({inputId: id, focus: false}))
-  const rowSixIds = ['5-0', '5-1', '5-2', '5-3', '5-4']
-  const rowSixInputs = rowSixIds.map( id => ({inputId: id, focus: false}))
+  const rowOneIds = ['0', '1', '2', '3', '4']
+  const rowOneInputs = rowOneIds.map( id => id === '0' ? ({inputId: id, focus: true, letter: ''}): ({inputId: id, focus: false, letter: ''}))
+  const rowTwoIds = ['6', '7', '8', '9', '10']
+  const rowTwoInputs = rowTwoIds.map( id => ({inputId: id, focus: false, letter: ''}))
+  const rowThreeIds = ['11', '12', '13', '14', '15']
+  const rowThreeInputs = rowThreeIds.map( id => ({inputId: id, focus: false, letter: ''}))
+  const rowFourIds = ['16', '17', '18', '19', '20']
+  const rowFourInputs = rowFourIds.map( id => ({inputId: id, focus: false, letter: ''}))
+  const rowFiveIds = ['21', '22', '23', '24', '25']
+  const rowFiveInputs = rowFiveIds.map( id => ({inputId: id, focus: false, letter: ''}))
+  const rowSixIds = ['26', '27', '28', '29', '30']
+  const rowSixInputs = rowSixIds.map( id => ({inputId: id, focus: false, letter: ''}))
+  const allInputs = rowOneInputs.concat(rowTwoInputs).concat(rowThreeInputs).concat(rowFourInputs).concat(rowFiveInputs).concat(rowSixInputs)
+  
+  
+  const [inputs, setCurrentInputs] = useState([allInputs])
 
+  
+  
   // Keyboard rows
   const rowOneLetters = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'] 
   const rowTwoLetters = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'] 
   const rowThreeLetters = ['enter', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'del'] 
+  
+  
+  const addLetter = (letter) => {
+    const focusedInput = allInputs.filter( input => input.focus !== false)
+    focusedInput.map( input => input.letter = letter )
+          // setCurrentInputIndex(currentInputIndex <= 30 ? currentInputIndex + 1: console.log('GameOver'))
+    console.log(focusedInput)
+    // console.log(currentInput)
+    // setCurrentInput(input)
+  }
 
   return (
         <main>
@@ -70,11 +92,11 @@ function App() {
         {/* <!-- KEYBOARD --> */}
         <div className="keyboard">
             {/* <!-- ROW1 --> */}
-            <KeyboardRow letters={rowOneLetters}/>
+            <KeyboardRow onAddLetter={addLetter}  letters={rowOneLetters}/>
             {/* <!-- ROW2 --> */}
-            <KeyboardRow letters={rowTwoLetters}/>
+            <KeyboardRow onAddLetter={addLetter} letters={rowTwoLetters}/>
             {/* <!-- ROW3 --> */}
-            <KeyboardRow letters={rowThreeLetters}/>
+            <KeyboardRow onAddLetter={addLetter} letters={rowThreeLetters}/>
         </div>
     </main>
     
